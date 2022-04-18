@@ -1,5 +1,3 @@
-//Grupo C05 - Alunos: Dennis Almeida, Lucas do Nascimento, Tatiana Gonçalves
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
@@ -18,12 +16,12 @@ main()
     {
         printf("1 - Incluir dados\n");
         printf("2 - Lista de dados\n");
-        printf("3 - Pesquisar música\n");
+        printf("3 - Pesquisar mÃºsica\n");
         printf("4 - Pesquisar autor pela primeira letra\n");
         printf("5 - Altera dados\n");
         printf("6 - Exclui dados\n");
         printf("7 - Sair\n");
-        printf("\nEscolha uma das opcões do menu acima: ");
+        printf("\nEscolha uma das opcÃµes do menu acima: ");
         scanf("%d", &opcao);
         getchar();
 
@@ -73,7 +71,7 @@ int entrada()
 
     for(int i=0; i<3; i++)
     {
-        printf("\nInsira uma música: ");
+        printf("\nInsira uma mÃºsica: ");
         scanf("%s", &nome_musica[i][0]);
         getchar();
     }
@@ -92,7 +90,7 @@ int entrada()
 
 int lista()
 {
-    printf("\Músicas e autores cadastrados:\n");
+    printf("\MÃºsicas e autores cadastrados:\n");
     FILE *arq;
 
     arq = fopen("DF01N2.txt","r");
@@ -110,7 +108,7 @@ int lista()
     {
         if(nome_musica[i][0] != '0')
         {
-            printf("\nMúsica: %s\n", nome_musica[i]);
+            printf("\nMÃºsica: %s\n", nome_musica[i]);
             printf("Autor: %s\n", nome_autor[i]);
         }
 
@@ -127,7 +125,7 @@ int pesquisaMusica()
     int x, y, cont=0;
     char musica[30];
 
-    printf("\nDigite uma música a ser procurada: ");
+    printf("\nDigite uma mÃºsica a ser procurada: ");
     scanf("%s", &musica[0]);
     getchar();
 
@@ -151,7 +149,7 @@ int pesquisaMusica()
         if(musica[y] == '\0' && nome_musica[x][y] == '\0')
         {
             printf("\nRegistro Encontrado!");
-            printf("\nMúsica: %s\n", nome_musica[x]);
+            printf("\nMÃºsica: %s\n", nome_musica[x]);
             return x;
         }
         else
@@ -199,7 +197,7 @@ int pesquisaAutor()
             if(letra == nome_autor[x][0])
             {
             printf("\nRegistro Encontrado!");
-            printf("\nMúsica: %s\n", nome_musica[x]);
+            printf("\nMÃºsica: %s\n", nome_musica[x]);
             printf("\Autor: %s\n", nome_autor[x]);
             cont=1;
             return x;
@@ -210,7 +208,7 @@ int pesquisaAutor()
 
     if(cont!=1)
     {
-        printf("Registro não encontrado!\n");
+        printf("Registro nÃ£o encontrado!\n");
     }
 
 }
@@ -224,7 +222,7 @@ int alterarDado()
     int x, y, cont=0;
     char musica[30];
 
-    printf("\nDigite uma música a ser alterada: ");
+    printf("\nDigite uma mÃºsica a ser alterada: ");
     scanf("%s", &musica[0]);
     getchar();
 
@@ -250,7 +248,7 @@ int alterarDado()
         {
             printf("\nRegistro Encontrado!");
             printf("\nInsira os dados para alterar:\n");
-            printf("\nInsira uma nova música: ");
+            printf("\nInsira uma nova mÃºsica: ");
             scanf("%s", &nome_musica[x]);
             printf("\nInsira um novo autor: ");
             scanf("%s", &nome_autor[x]);
@@ -277,7 +275,7 @@ void excluir()
     char musica[30];
     char excluir;
 
-    printf("\nDigite uma música a ser excluida: ");
+    printf("\nDigite uma mÃºsica a ser excluida: ");
     scanf("%s", &musica[0]);
     getchar();
 
