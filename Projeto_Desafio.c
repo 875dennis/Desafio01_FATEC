@@ -90,7 +90,7 @@ int entrada()
 
 int lista()
 {
-    printf("\Músicas e autores cadastrados:\n");
+    printf("\nMúsicas e autores cadastrados:\n");
     FILE *arq;
 
     arq = fopen("DF01N2.txt","r");
@@ -197,8 +197,8 @@ int pesquisaAutor()
             if(letra == nome_autor[x][0])
             {
             printf("\nRegistro Encontrado!");
-            printf("\nMúsica: %s\n", nome_musica[x]);
-            printf("\Autor: %s\n", nome_autor[x]);
+            printf("\nMúsica: %s", nome_musica[x]);
+            printf("\nAutor: %s\n", nome_autor[x]);
             cont=1;
             return x;
             }
